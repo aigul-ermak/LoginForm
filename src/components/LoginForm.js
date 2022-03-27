@@ -1,5 +1,6 @@
 import React from 'react';
 import logIn from '../assets/img/log-in.png'
+
 import '../style/LoginForm.css'
 
 import {useFormik} from 'formik';

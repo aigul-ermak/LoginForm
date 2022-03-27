@@ -1,10 +1,13 @@
 import './App.css';
-import {LoginForm} from './components/LoginForm';
+import {LoginFormReactHookForm} from '../src/components/LoginFormReactHookForm';
 
 function App() {
     return (
         <div className="App">
-            <LoginForm/>
+            {/*<LoginForm/>*/}
+
+            <LoginFormReactHookForm/>
+
         </div>
     );
 }
