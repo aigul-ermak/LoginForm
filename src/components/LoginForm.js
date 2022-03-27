@@ -1,5 +1,6 @@
 import React from 'react';
 import logIn from '../assets/img/log-in.png'
+import '../style/LoginForm.css'
 
 import {useFormik} from 'formik';
 import * as Yup from 'yup'
@@ -8,7 +9,7 @@ import * as Yup from 'yup'
 export const LoginForm = () => {
     // const [login, setLogin] = useState('');
     // const [password, setPassword] = useState('');
-    const {handleSubmit, handleChange, values, touched, errors, handleBlur } = useFormik({
+    const {handleSubmit, handleChange, values, touched, errors, handleBlur} = useFormik({
         initialValues: {
             login: '',
             password: ''
@@ -29,34 +30,34 @@ export const LoginForm = () => {
     }
 
     return (
-        <div >
-            <form onSubmit={handleSubmit} >
+        <div>
+            <form onSubmit={handleSubmit}>
                 <header>
-                    <img width='60' src={logIn} alt="log in"/>
+                    <img width='50' src={logIn} alt="log in"/>
                 </header>
-                <label htmlFor="login">
-                    <input
-                        onChange={handleChange}
-                        value={values.login}
-                        id="login"
-                        name="login"
-                        onBlur={handleBlur}
-                        type="text"/>
-                    {touched.login && errors.login ? (
-                        <div>{errors.login}</div> ) : null}
-                </label>
-                <label htmlFor="password">Password</label>
+                <label htmlFor="login">Login</label>
                 <input
                     onChange={handleChange}
-                    value={values.password}
-                    id="password"
-                    name="password"
+                    value={values.login}
+                    id="login"
+                    name="login"
                     onBlur={handleBlur}
                     type="text"/>
-                {touched.password && errors.password ? (
-                    <div>{errors.password}</div> ) : null}
-                <button type='submit'>Log in</button>
-            </form>
-        </div>
-    )
+                {touched.login && errors.login ? (
+                    <div>{errors.login}</div>) : null}
+
+            <label htmlFor="password">Password</label>
+            <input
+                onChange={handleChange}
+                value={values.password}
+                id="password"
+                name="password"
+                onBlur={handleBlur}
+                type="text"/>
+            {touched.password && errors.password ? (
+                <div>{errors.password}</div>) : null}
+            <button type='submit'>Log in</button>
+        </form>
+</div>
+)
 }
